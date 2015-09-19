@@ -13,6 +13,7 @@
 		BD99F89F1B9F4E650003B36F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD99F89E1B9F4E650003B36F /* Images.xcassets */; };
 		BD99F8A21B9F4E650003B36F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD99F8A01B9F4E650003B36F /* LaunchScreen.xib */; };
 		BD99F8AE1B9F4E650003B36F /* MeMe_V1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99F8AD1B9F4E650003B36F /* MeMe_V1Tests.swift */; };
+		BD9FC5C81BACCBDE0052B185 /* meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9FC5C71BACCBDE0052B185 /* meme.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		BD99F8A71B9F4E650003B36F /* MeMe_V1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeMe_V1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD99F8AC1B9F4E650003B36F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD99F8AD1B9F4E650003B36F /* MeMe_V1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeMe_V1Tests.swift; sourceTree = "<group>"; };
+		BD9FC5C71BACCBDE0052B185 /* meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				BD99F89E1B9F4E650003B36F /* Images.xcassets */,
 				BD99F8A01B9F4E650003B36F /* LaunchScreen.xib */,
 				BD99F8951B9F4E650003B36F /* Supporting Files */,
+				BD9FC5C71BACCBDE0052B185 /* meme.swift */,
 			);
 			path = MeMe_V1;
 			sourceTree = "<group>";
@@ -156,7 +159,8 @@
 		BD99F88A1B9F4E650003B36F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "CelG Mobile LLC";
 				TargetAttributes = {
 					BD99F8911B9F4E650003B36F = {
@@ -214,6 +218,7 @@
 			files = (
 				BD99F89A1B9F4E650003B36F /* ViewController.swift in Sources */,
 				BD99F8981B9F4E650003B36F /* AppDelegate.swift in Sources */,
+				BD9FC5C81BACCBDE0052B185 /* meme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +281,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -342,6 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MeMe_V1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "celgmobile.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -352,6 +359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MeMe_V1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "celgmobile.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -370,6 +378,7 @@
 				);
 				INFOPLIST_FILE = MeMe_V1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "celgmobile.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeMe_V1.app/MeMe_V1";
 			};
@@ -385,6 +394,7 @@
 				);
 				INFOPLIST_FILE = MeMe_V1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "celgmobile.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeMe_V1.app/MeMe_V1";
 			};
@@ -409,6 +419,7 @@
 				BD99F8B31B9F4E650003B36F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD99F8B41B9F4E650003B36F /* Build configuration list for PBXNativeTarget "MeMe_V1Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +428,7 @@
 				BD99F8B61B9F4E650003B36F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
