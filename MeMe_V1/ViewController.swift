@@ -15,7 +15,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
-    var keyboardShiftDown: Bool = false
     
     //Dictionary for NSAttributedString to setup attributes of Text Fields
     let memeTextAttributes = [
@@ -142,11 +141,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //Function to adjust view once keyboard disappears
     func keyboardWillDisappear(notification:NSNotification) {
-        if keyboardShiftDown {
+
             topTextField.hidden = false
             view.frame.origin.y = 0
-        }
-        keyboardShiftDown = false
     }
     
     //Function to derive keyboard height from Userinfo in the UINSNotification
@@ -202,16 +199,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     //UITextfield Delegate Function
     func textFieldDidEndEditing(textField: UITextField) {
-        if bottomTextField.isFirstResponder() {
-            keyboardShiftDown = true
-        }
+
         textField.resignFirstResponder()
     }
     //UITextfield Delegate Function
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if bottomTextField.isFirstResponder() {
-            keyboardShiftDown = true
-        }
+
         textField.resignFirstResponder()
         return true
     }
