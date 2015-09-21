@@ -76,16 +76,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func albumImage(sender: UIBarButtonItem) {
         let albumViewController = UIImagePickerController()
         albumViewController.delegate = self
-        self.presentViewController(albumViewController, animated: true, completion: nil)
+        presentViewController(albumViewController, animated: true, completion: nil)
     }
     //Camera button action to present camera view
     @IBAction func cameraImage(sender: UIBarButtonItem) {
         let cameraViewController = UIImagePickerController()
         if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
             cameraViewController.sourceType = UIImagePickerControllerSourceType.Camera
-            self.presentViewController(cameraViewController, animated: true, completion: nil)
-        } else {
-            print("Camera not present in the device")
+            presentViewController(cameraViewController, animated: true, completion: nil)
         }
         cameraViewController.delegate = self
     }
@@ -138,7 +136,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func keyboardWasShown(notification:NSNotification) {
         if bottomTextField.isFirstResponder() {
             topTextField.hidden = true
-            self.view.frame.origin.y -= getKeyBoardHeight(notification)
+            view.frame.origin.y -= getKeyBoardHeight(notification)
         }
     }
     
@@ -146,7 +144,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func keyboardWillDisappear(notification:NSNotification) {
         if keyboardShiftDown {
             topTextField.hidden = false
-            self.view.frame.origin.y += getKeyBoardHeight(notification)
+            view.frame.origin.y = 0
         }
         keyboardShiftDown = false
     }
@@ -172,8 +170,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         
         // Hide toolbar and navbar
-        self.toolBar.hidden = true
-        self.navBar.hidden = true
+        toolBar.hidden = true
+        navBar.hidden = true
 
         // Render view to an image
         UIGraphicsBeginImageContext(view.frame.size)
@@ -182,10 +180,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         
         //Show tool and nav bars
-        self.toolBar.hidden = false
-        self.navBar.hidden = false
+        toolBar.hidden = false
+        navBar.hidden = false
     
-        
         return memedImage
     }
 
