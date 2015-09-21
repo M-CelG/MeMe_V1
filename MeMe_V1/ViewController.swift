@@ -116,15 +116,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
+    
     //Delegate function for dismissing the image picker view controller
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
     //Function to register for Keyboard hide and show notification
     func registerForKeyboardNotification() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillDisappear:", name: UIKeyboardDidHideNotification, object: nil)
     }
+    
     //Function to deregister for Keyboard hide and show notification
     func deregisterForKeyboardNotification() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidHideNotification, object: nil)
@@ -141,7 +144,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //Function to adjust view once keyboard disappears
     func keyboardWillDisappear(notification:NSNotification) {
-
             topTextField.hidden = false
             view.frame.origin.y = 0
     }
@@ -193,18 +195,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textField.text = newText as String
         return false
     }
+    
     //UITextfield Delegate Function
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         return true
     }
+    
     //UITextfield Delegate Function
     func textFieldDidEndEditing(textField: UITextField) {
-
         textField.resignFirstResponder()
     }
+    
     //UITextfield Delegate Function
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-
         textField.resignFirstResponder()
         return true
     }
